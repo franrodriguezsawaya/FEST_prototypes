@@ -31,6 +31,13 @@ function draw(){
     }
     currentPath.push(point);
   }
+  else if (touchStarted) {
+    var point = {
+      x: mouseX,
+      y: mouseY
+    }
+    currentPath.push(point);
+  }
 
 stroke(255);
 strokeWeight(12);
