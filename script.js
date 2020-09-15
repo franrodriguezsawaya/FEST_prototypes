@@ -3,7 +3,7 @@ let drawing = [];
 let currentPath = [];
 
 function setup(){
-  canvas = createCanvas (windowWidth,windowHeight);
+  canvas = createCanvas (windowWidth,(windowHeight - 100px));
   canvas.mousePressed(startPath);
   canvas.touchStarted(startPath);
   canvas.parent('canvascontainer');
