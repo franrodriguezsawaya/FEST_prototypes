@@ -1,6 +1,6 @@
-var database;
-var drawing = [];
-var currentPath = [];
+let database;
+let drawing = [];
+let currentPath = [];
 
 function setup(){
   canvas = createCanvas (2100,1400);
@@ -10,9 +10,10 @@ function setup(){
 
   // canvas.mouseReleased(endPath);
 
-  // var saveButton = select('#saveButton');
+  // let saveButton = select('#saveButton');
   // saveButton.mousePressed(saveDrawing);
 }
+
 function startPath() {
   currentPath = [];
   drawing.push(currentPath);
@@ -27,23 +28,23 @@ function draw(){
   background(0);
 
   if (mouseIsPressed) {
-    var point = {
+    let point = {
       x: mouseX,
       y: mouseY
     }
     currentPath.push(point);
   }
 
-stroke(255);
-strokeWeight(12);
-noFill();
-  for (let i = 0; i < drawing.length; i++){
-    var path = drawing[i];
+  stroke(255);
+  strokeWeight(12);
+  noFill();
+
+  for (let i = 0; i < drawing.length; i++){  
+    let path = drawing[i];
     beginShape();
     for (let j = 0; j < path.length; j++){
-    vertex(path[j].x, path[j].y)
+      vertex(path[j].x, path[j].y)
+    }
+    endShape();
   }
-  endShape();
-
-}
 }
